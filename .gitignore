@@ -1,0 +1,6 @@
+## generic files to ignore
+error_log
+_notes
+*.DS_Store
+.idea
+*~
