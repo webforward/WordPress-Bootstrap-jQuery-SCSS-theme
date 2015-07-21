@@ -1,4 +1,28 @@
 <?php
+/* `Theme Settings Support - Make editable options for your theme
+----------------------------------------------------------------------------------------------------*/
+
+// ### Global Options
+$tploptions = array(
+	'menu_title' => 'Theme Settings',
+	'page_title' => 'Theme Settings',
+	'page_description' => '',
+	'field_prefix' => 'themenameslug',
+);
+
+// ### Field Settings
+$tploption_fields = array(
+	//array($type, $slug, $name, $args());
+
+	array('textfield', 'header_logo_url', 'Header Logo URL'),
+	array('textfield', 'copyright_name', 'Footer Copyright Name'),
+	array('textfield', 'footer_logo_url', 'Footer Logo URL'),
+	array('textfield', 'footer_address', 'Footer Address'),
+
+);
+
+require_once('theme-settings.php');
+
 
 /* `Add Support for Menus
 ----------------------------------------------------------------------------------------------------*/
