@@ -24,6 +24,7 @@ Some features may not be laid out the way you would like it but I have developed
 - Custom Excerpt Length
 - Custom Read More Link
 - Disable Comments (Ready to use)
+- Custom Login Logo Url (Ready to use)
 - Custom Login Logo
 - Custom Login Styles
 - Custom Login Powered By Text (Ready to use)

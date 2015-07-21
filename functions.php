@@ -152,6 +152,13 @@ function df_disable_comments_admin_bar() {
 }
 add_action('init', 'df_disable_comments_admin_bar');
 
+/* `Customize the login logo url else it will go to WordPress.
+----------------------------------------------------------------------------------------------------*/
+
+function custom_loginlogo_url($url) {
+	return get_site_url();
+}
+add_filter( 'login_headerurl', 'custom_loginlogo_url' );
 
 /* `Customize the login logo.
 ----------------------------------------------------------------------------------------------------*/
