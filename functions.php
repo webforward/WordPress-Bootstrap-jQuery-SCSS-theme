@@ -187,7 +187,7 @@ add_filter( 'login_headerurl', 'custom_loginlogo_url' );
 ----------------------------------------------------------------------------------------------------*/
 
 function my_login_message() {
-	$message = '<div id="poweredby" style="position:absolute;bottom:10px;right:10px">Powered By <a href="http://www.webfwd.co.uk/" target="_blank">Webforward</a></div>';
+	$message = '<div id="poweredby" style="position:absolute;bottom:10px;right:10px">Powered by <a href="http://www.webfwd.co.uk/" target="_blank">Webforward</a></div>';
 	return $message;
 }
 add_filter('login_message', 'my_login_message');
