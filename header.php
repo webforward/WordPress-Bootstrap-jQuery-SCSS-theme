@@ -14,7 +14,7 @@
 </head>
 <body <?php body_class(); ?>>
 <div id="wrap">
-    <header id="footer">
+    <header id="header">
         <nav class="navbar">
             <div class="container">
                 <div class="navbar-header">
