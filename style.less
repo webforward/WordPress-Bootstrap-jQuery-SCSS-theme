@@ -17,10 +17,10 @@ with less, you can download software to automatically convert or use the online 
 
 @import (inline) "css/wordpress-core.css";
 
-@lg:   ~"only screen and (min-width: 1200px)";
-@md:   ~"only screen and (max-width: 1199px)";
-@sm:   ~"only screen and (max-width: 991px)";
-@xs:   ~"only screen and (max-width: 767px)";
+@lg:   ~"min-width: 1200px";
+@md:   ~"max-width: 1199px";
+@sm:   ~"max-width: 991px";
+@xs:   ~"max-width: 767px";
 
 .opacity (@opacity: 0.75) {
 	-webkit-opacity: 	@opacity;
