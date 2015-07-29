@@ -22,6 +22,7 @@ Functions / Features
 - Right Sidebar (Ready to use)
 - Add img-responsive to images (Ready to use)
 - Custom Post Type
+- Custom Post types in Appearance -> Menu's  (Ready to use)
 - WYSIWYG Editor Styles
 - Custom Excerpt Length
 - Custom Read More Link

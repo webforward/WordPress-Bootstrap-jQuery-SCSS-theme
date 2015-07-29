@@ -92,6 +92,60 @@ the_post_thumbnail('thumbnail', array('class' => 'img-responsive'));
 //add_action('init', 'create_posttypes');
 
 
+/* `Show Post Type in Admin Menus
+----------------------------------------------------------------------------------------------------*/
+
+add_action( 'admin_head-nav-menus.php', 'wfd_navmenu_metabox' );
+add_filter( 'wp_get_nav_menu_items', 'wfd_archive_menu_filter', 10, 3 );
+
+
+function wfd_navmenu_metabox() {
+	add_meta_box( 'add-cpt', 'Custom Post Types', 'wfd_navmenu_metabox_content', 'nav-menus', 'side', 'default' );
+}
+
+function wfd_navmenu_metabox_content() {
+	$post_types = get_post_types( array( 'show_in_nav_menus' => true, 'has_archive' => true ), 'object' );
+
+	if( $post_types ) :
+		foreach ( $post_types as &$post_type ) {
+			$post_type->classes = array();
+			$post_type->type = $post_type->name;
+			$post_type->object_id = $post_type->name;
+			$post_type->title = $post_type->labels->name;
+			$post_type->object = 'wfd-archive';
+		}
+		$walker = new Walker_Nav_Menu_Checklist( array() );
+
+		echo '<div id="wfd-archive" class="posttypediv">';
+		echo '<div id="tabs-panel-wfd-archive" class="tabs-panel tabs-panel-active">';
+		echo '<ul id="ctp-archive-checklist" class="categorychecklist form-no-clear">';
+		echo walk_nav_menu_tree( array_map('wp_setup_nav_menu_item', $post_types), 0, (object) array( 'walker' => $walker) );
+		echo '</ul>';
+		echo '</div>';
+		echo '</div>';
+		echo '<p class="button-controls">';
+		echo '<span class="add-to-menu">';
+//		echo '<img class="waiting" src="' . esc_url( admin_url( 'images/wpspin_light.gif' ) ) . '" alt="" />';
+		echo '<input type="submit"' . disabled( $nav_menu_selected_id, 0 ) . ' class="button-secondary submit-add-to-menu" value="' . 'Add to Menu' . '" name="add-ctp-archive-menu-item" id="submit-wfd-archive" />';
+		echo '</span>';
+		echo '</p>';
+	endif;
+}
+
+function wfd_archive_menu_filter( $items, $menu, $args ) {
+	foreach( $items as &$item ) {
+		if( $item->object != 'wfd-archive' ) continue;
+		$item->url = get_post_type_archive_link( $item->type );
+
+		if( get_query_var( 'post_type' ) == $item->type ) {
+			$item->classes[] = 'current-menu-item';
+			$item->current = true;
+		}
+	}
+	return $items;
+}
+
+
 /* `Style the WYSIWYG edtior in the admin
 ----------------------------------------------------------------------------------------------------*/
 
