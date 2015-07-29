@@ -228,7 +228,6 @@ remove_action('wp_head', 'feed_links', 2);								// Display the links to the ge
 remove_action('wp_head', 'feed_links_extra', 3);						// Display the links to the extra feeds such as category feeds
 remove_action('wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0);		// Display the prev,start links
 remove_action('wp_head', 'wp_shortlink_wp_head', 10, 0);				// Display the short url of the ucrrent page
-add_filter('login_errors', 'show_less_login_info');                     // Show less info to users on failed login for security
 add_filter('the_generator', 'no_generator');	                        // Do not generate and display WordPress version
 // Remove Emoji support in new Wordpress 4.2
 remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
