@@ -32,6 +32,7 @@ Functions / Features
 - Custom Login Styles
 - Custom Login Powered By Text (Ready to use)
 - WordPress Headers Cleanup (Ready to use)
+- Security fixes
 
 
 Theme Settings
