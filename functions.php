@@ -274,6 +274,8 @@ add_filter('login_message', 'my_login_message');
 /* `Let's clean up WordPress meta head.
 ----------------------------------------------------------------------------------------------------*/
 
+add_filter( 'xmlrpc_enabled', '__return_false' );						// Disable XML RPC
+
 remove_action('wp_head', 'wp_generator');                               // Display the XHTML generator that is generated on the wp_head hook, WP version
 remove_action('wp_head', 'rsd_link');									// Display the link to the Really Simple Discovery service endpoint, EditURI link
 remove_action('wp_head', 'wlwmanifest_link');							// Display the link to the Windows Live Writer manifest file.
