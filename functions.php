@@ -1,4 +1,7 @@
 <?php
+
+flush_rewrite_rules(); // Dont forget to turn this off when you go live - this is for debugging slugs/permalinks.
+
 /* `Theme Settings Support - Make editable options for your theme
 ----------------------------------------------------------------------------------------------------*/
 
