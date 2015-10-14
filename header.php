@@ -7,8 +7,8 @@
     <link href="<?php bloginfo('template_url'); ?>/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_url'); ?>" media="screen"/>
     <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <script src="<?php bloginfo('template_url'); ?>/js/html5shiv.js"></script>
+    <script src="<?php bloginfo('template_url'); ?>/js/respond.min.js"></script>
     <![endif]-->
     <?php wp_head(); ?>
 </head>
