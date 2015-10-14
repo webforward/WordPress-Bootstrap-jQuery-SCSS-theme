@@ -1,5 +1,8 @@
 <?php
 
+// Disable Automatic Updates
+define( 'WP_AUTO_UPDATE_CORE', false );
+
 flush_rewrite_rules(); // Dont forget to turn this off when you go live - this is for debugging slugs/permalinks.
 
 /* `Theme Settings Support - Make editable options for your theme
@@ -272,6 +275,27 @@ function my_login_message() {
 	return $message;
 }
 add_filter('login_message', 'my_login_message');
+
+
+/* `Give 'Posts' a custom name in the admin
+----------------------------------------------------------------------------------------------------*/
+
+//function wp_change_post_label() {
+//	global $menu;
+//	global $submenu;
+//	$menu[5][0] = 'News';
+//}
+//add_action( 'admin_menu', 'wp_change_post_label' );
+
+
+/* `Fix translate bug in Chrome v45
+----------------------------------------------------------------------------------------------------*/
+
+function chrome_fix() {
+	if ( strpos( $_SERVER['HTTP_USER_AGENT'], 'Chrome' ) !== false )
+		wp_add_inline_style( 'wp-admin', '#adminmenu { transform: translateZ(0); }' );
+}
+add_action('admin_enqueue_scripts', 'chrome_fix');
 
 
 /* `Let's clean up WordPress meta head.
