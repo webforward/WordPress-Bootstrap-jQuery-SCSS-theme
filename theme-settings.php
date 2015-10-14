@@ -1,4 +1,6 @@
 <?php
+// Version 2
+// - Added textarea support
 
 add_action( 'admin_menu', 'tploptions_add_admin_menu' );
 add_action( 'admin_init', 'tploptions_settings_init' );
@@ -20,7 +22,6 @@ function tploptions_add_admin_menu() {
 }
 
 function tploptions_settings_init() {
-    // This displays the settings page
     global $tploptions, $tploption_fields;
     register_setting( 'tploptions', 'tploptions_settings' );
     add_settings_section('tploptions_section', '', 'tploptions_settings_section_callback', 'tploptions');
@@ -47,6 +48,16 @@ foreach ($tploption_fields as $f) {
                 }
             ';
             break;
+        case 'textarea':
+            $fn = '
+                function '.$id.'_render() {
+                    global $tploptions;
+                    $options = get_option("tploptions_settings");
+                    echo "<textarea type=\"text\" name=\"tploptions_settings['.$id.']\" rows=\"5\" style=\"width: 100%\">".$options["'.$id.'"]."</textarea>";
+                    if ($tploptions["debug"]) { echo "</td><td><span style=\"color: #999\"> <em>use </em>get_tploption(\"'.str_replace($tploptions['field_prefix'].'_', '', $id).'\")<em> to display this field.</em></span>"; }
+                }
+            ';
+            break;
     }
 
     eval($fn);
@@ -67,5 +78,4 @@ function tploptions_options_page(  ) {
     do_settings_sections( 'tploptions' );
     submit_button();
     echo '</form>';
-
 }
