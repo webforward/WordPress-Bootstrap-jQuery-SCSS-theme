@@ -5,30 +5,24 @@ define( 'WP_AUTO_UPDATE_CORE', false );
 
 flush_rewrite_rules(); // Dont forget to turn this off when you go live - this is for debugging slugs/permalinks.
 
-/* `Theme Settings Support - Make editable options for your theme
+/* `Theme Settings Support - Buy ACF Pro - It's Amazing!
 ----------------------------------------------------------------------------------------------------*/
 
-// ### Global Options
-$tploptions = array(
-	'menu_title' => 'Theme Settings',
-	'page_title' => 'Theme Settings',
-	'page_description' => '',
-	'field_prefix' => 'themenameslug',
-);
+if( function_exists('acf_add_options_page') ) {
+	acf_add_options_page(array(
+		'page_title' 	=> 'General Settings',
+		'menu_title'	=> 'Theme Settings',
+		'menu_slug' 	=> 'theme-settings',
+		'capability'	=> 'edit_posts',
+		'redirect'		=> false
+	));
 
-// ### Field Settings
-$tploption_fields = array(
-	//array($type, $slug, $name, $args());
-
-	array('textfield', 'header_logo_url', 'Header Logo URL'),
-	array('textfield', 'copyright_name', 'Footer Copyright Name'),
-	array('textfield', 'footer_logo_url', 'Footer Logo URL'),
-	array('textfield', 'footer_address', 'Footer Address'),
-
-);
-
-require_once('theme-settings.php');
-
+//	acf_add_options_sub_page(array(
+//		'page_title' 	=> 'Footer Box Settings',
+//		'menu_title'	=> 'Footer Boxes',
+//		'parent_slug'	=> 'theme-settings',
+//	));
+}
 
 /* `Add Support for Menus
 ----------------------------------------------------------------------------------------------------*/
