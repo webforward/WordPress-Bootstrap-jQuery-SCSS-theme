@@ -1,6 +1,6 @@
 License
 ---------------
-WordPress Starter Bootstrap jQuery LESS Theme, Copyright 2015 Richard Leishman, WEBFWD LTD
+WordPress Starter Bootstrap jQuery LESS Theme, Copyright 2016 Richard Leishman, WEBFWD LTD
 WordPress Starter Bootstrap jQuery LESS Theme is distributed under the terms of the GNU GPL
 
 This program is free software: you can redistribute it and/or modify
