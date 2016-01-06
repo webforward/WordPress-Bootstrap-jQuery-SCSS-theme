@@ -14,7 +14,6 @@ Technologies
 
 Functions / Features
 ---------------
-- Theme Settings (Ready to use) - Very basic, see below.
 - To Navigation (Ready to use)
 - Post Thumbnails (Ready to use)
 - Set Post Thumbnail Size
@@ -34,20 +33,6 @@ Functions / Features
 - WordPress Headers Cleanup (Ready to use)
 - Security fixes
 - Remove unwanted widgets
-
-
-Theme Settings
----------------
-Very basic theme settings, I built this as most of our client kept coming back to us to change the telephone number, social media links within the header and footer which can not be changed within posts or pages.
-
-Each field and overall settings are configured in functions.php but this script only supports text fields at the moment.
-
-Information is stored in wp_options and there are two simple php functions for retrieving data:
-
-the_tploption('textfield') - This echos the field data.
-get_tploption('textfield') - This returns the field data.
-
-I made my own functions to elimindate conflicts between themes and plugins, dont use get_option() etc.
 
 License
 ---------------
