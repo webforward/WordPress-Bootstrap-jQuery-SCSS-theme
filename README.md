@@ -7,7 +7,7 @@ Some features may not be laid out the way you would like it but I have developed
 Technologies
 ---------------
 - Bootstrap 3.3.5 (Ready to use)
-- jQuery 1.11.3 (Ready to use)
+- jQuery WP (Ready to use)
 - WordPress Core Styles (Ready to use)
 - Less (Ready to use)
 - Bootstrap Nav Walker (Ready to use) - https://github.com/twittem/wp-bootstrap-navwalker

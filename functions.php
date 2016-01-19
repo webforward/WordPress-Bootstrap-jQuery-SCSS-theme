@@ -24,6 +24,18 @@ if( function_exists('acf_add_options_page') ) {
 //	));
 }
 
+/* `Enquire JavaScript resources
+----------------------------------------------------------------------------------------------------*/
+function enquire_js() {
+	// Functions js
+	wp_enqueue_script( 'functionsjs', get_template_directory_uri() . '/functions.js', array('jquery'), '1.0.0', true );
+
+	// Bootstrap js
+	wp_enqueue_script( 'functionsjs', get_template_directory_uri() . '/js/bootstrap.min.js', array('jquery'), '3.3.5', true );
+}
+
+add_action('wp_enqueue_scripts', 'enquire_js');
+
 /* `Add Support for Menus
 ----------------------------------------------------------------------------------------------------*/
 require_once('wp-bootstrap-navwalker/wp_bootstrap_navwalker.php');
