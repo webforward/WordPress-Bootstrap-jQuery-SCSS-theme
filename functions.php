@@ -1,5 +1,7 @@
 <?php
 
+add_action('init', 'admin_bar');
+
 // Disable Automatic Updates
 define( 'WP_AUTO_UPDATE_CORE', false );
 
@@ -322,7 +324,6 @@ function unregister_default_widgets() {
 }
 add_action('widgets_init', 'unregister_default_widgets', 11);
 
-
 /* `Let's clean up WordPress meta head.
 ----------------------------------------------------------------------------------------------------*/
 
@@ -345,6 +346,15 @@ add_action( 'widgets_init', 'my_remove_recent_comments_style' );
 function my_remove_recent_comments_style() {
 	global $wp_widget_factory;
 	remove_action( 'wp_head', array( $wp_widget_factory->widgets['WP_Widget_Recent_Comments'], 'recent_comments_style'  ) );
+}
+
+/* `Force admin bar to appear.
+----------------------------------------------------------------------------------------------------*/
+
+function admin_bar(){
+    if (is_user_logged_in()) {
+        add_filter('show_admin_bar', '__return_true', 1000);
+    }
 }
 
 /* `Add more functions
