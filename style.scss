@@ -1,5 +1,5 @@
 /*
-Theme Name: Carefully Crafted Media
+Theme Name: Webfwd Bootstrap SCSS WordPress Theme
 Theme URI: http://www.webfwd.co.uk/
 Description: Extremely lightweight starter theme with bootstrap, jquery, less and loads of functions ready to go.
 Author: Webforward
@@ -26,5 +26,7 @@ $opacity: 0.75;
 	-moz-opacity: $opacity;
 	opacity: $opacity;
 }
-a:hover { .opacity() }
+a:hover {
+	@extend .opacity;
+}
 
