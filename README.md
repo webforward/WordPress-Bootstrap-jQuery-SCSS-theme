@@ -1,6 +1,6 @@
-WordPress Starter Bootstrap jQuery LESS Theme
+WordPress Starter Bootstrap jQuery SCSS Theme
 ---------------
-This is an extremely lightweight starter theme with bootstrap, jquery, less and loads of functions ready to go.
+This is an extremely lightweight starter theme with bootstrap, jquery, scss and loads of functions ready to go.
 
 Some features may not be laid out the way you would like it but I have developed this to work the best for how I like to start my WordPress projects.
 
@@ -36,8 +36,8 @@ Functions / Features
 
 License
 ---------------
-WordPress Starter Bootstrap jQuery LESS Theme, Copyright 2016 Richard Leishman, WEBFWD LTD
-WordPress Starter Bootstrap jQuery LESS Theme is distributed under the terms of the GNU GPL
+WordPress Starter Bootstrap jQuery Theme, Copyright 2016 Richard Leishman, WEBFWD LTD
+WordPress Starter Bootstrap jQuery SCSS Theme is distributed under the terms of the GNU GPL
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
