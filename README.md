@@ -9,7 +9,7 @@ Technologies
 - Bootstrap 3.3.5 (Ready to use)
 - jQuery WP (Ready to use)
 - WordPress Core Styles (Ready to use)
-- Less (Ready to use)
+- SCSS (Ready to use)
 - Bootstrap Nav Walker (Ready to use) - https://github.com/twittem/wp-bootstrap-navwalker
 
 Functions / Features
