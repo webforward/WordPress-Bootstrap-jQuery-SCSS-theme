@@ -6,7 +6,7 @@ Some features may not be laid out the way you would like it but I have developed
 
 Technologies
 ---------------
-- Bootstrap 3.3.5 (Ready to use)
+- Bootstrap 4.1.3 (Ready to use)
 - jQuery WP (Ready to use)
 - WordPress Core Styles (Ready to use)
 - SCSS (Ready to use)
@@ -19,7 +19,7 @@ Functions / Features
 - Set Post Thumbnail Size
 - Custom Image Sizes
 - Right Sidebar (Ready to use)
-- Add img-responsive to images (Ready to use)
+- Add img-fluid to images (Ready to use)
 - Custom Post Type
 - Custom Post types in Appearance -> Menu's  (Ready to use)
 - WYSIWYG Editor Styles

@@ -7,6 +7,15 @@ define( 'WP_AUTO_UPDATE_CORE', false );
 
 flush_rewrite_rules(); // Dont forget to turn this off when you go live - this is for debugging slugs/permalinks.
 
+//add_action('get_footer', 'show_template');
+//function show_template()
+//{
+//    global $template;
+//    if ($_SERVER['REMOTE_ADDR'] == '212.159.67.125') {
+//        echo basename($template);
+//    }
+//}
+
 /* `Theme Settings Support - Buy ACF Pro - It's Amazing!
 ----------------------------------------------------------------------------------------------------*/
 
@@ -33,14 +42,14 @@ function enquire_js() {
 	wp_enqueue_script( 'functionsjs', get_template_directory_uri() . '/functions.js', array('jquery'), '1.0.0', true );
 
 	// Bootstrap js
-	wp_enqueue_script( 'bootstrapjs', get_template_directory_uri() . '/js/bootstrap.min.js', array('jquery'), '3.3.5', true );
+	wp_enqueue_script( 'bootstrapjs', get_template_directory_uri() . '/js/bootstrap.min.js', array('jquery'), '4.1.3', true );
 }
 
 add_action('wp_enqueue_scripts', 'enquire_js');
 
 /* `Add Support for Menus
 ----------------------------------------------------------------------------------------------------*/
-require_once('wp-bootstrap-navwalker/wp_bootstrap_navwalker.php');
+require_once('wp-bootstrap-navwalker/class-wp-bootstrap-navwalker.php');
 add_theme_support('menus');
 register_nav_menu( 'main-menu', 'Main menu' ); // Create our header menu
 
@@ -70,18 +79,18 @@ if (function_exists('register_sidebar'))
 ));
 
 
-/* `Add Bootstrap img-responsive to images in the content and post thumbnail
+/* `Add Bootstrap img-fluid to images in the content and post thumbnail
 ----------------------------------------------------------------------------------------------------*/
 
-function add_image_responsive_class($content) {
+function add_image_fluid_class($content) {
 	global $post;
 	$pattern ="/<img(.*?)class=\"(.*?)\"(.*?)>/i";
-	$replacement = '<img$1class="$2 img-responsive"$3>';
+	$replacement = '<img$1class="$2 img-fluid"$3>';
 	$content = preg_replace($pattern, $replacement, $content);
 	return $content;
 }
-add_filter('the_content', 'add_image_responsive_class');
-the_post_thumbnail('thumbnail', array('class' => 'img-responsive'));
+add_filter('the_content', 'add_image_fluid_class');
+the_post_thumbnail('thumbnail', array('class' => 'img-fluid'));
 
 
 /* `Create custom post type
