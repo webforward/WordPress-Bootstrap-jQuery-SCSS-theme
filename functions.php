@@ -11,7 +11,7 @@ flush_rewrite_rules(); // Dont forget to turn this off when you go live - this i
 //function show_template()
 //{
 //    global $template;
-//    if ($_SERVER['REMOTE_ADDR'] == '212.159.67.125') {
+//    if ($_SERVER['REMOTE_ADDR'] == 'xxx') {
 //        echo basename($template);
 //    }
 //}
