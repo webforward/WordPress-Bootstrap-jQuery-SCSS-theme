@@ -4,6 +4,7 @@ add_action('init', 'admin_bar');
 
 // Disable Automatic Updates
 define( 'WP_AUTO_UPDATE_CORE', false );
+define('CORE_UPGRADE_SKIP_NEW_BUNDLED', true);
 
 flush_rewrite_rules(); // Dont forget to turn this off when you go live - this is for debugging slugs/permalinks.
 
