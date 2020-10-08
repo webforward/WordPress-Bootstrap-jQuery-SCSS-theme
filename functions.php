@@ -102,6 +102,11 @@ add_filter('the_content', 'add_image_fluid_class');
 the_post_thumbnail('thumbnail', array('class' => 'img-fluid'));
 
 
+/* `Stop Contact Form 7 from automatically adding P tags
+----------------------------------------------------------------------------------------------------*/
+//add_filter('wpcf7_autop_or_not', '__return_false'); 
+
+
 /* `Create custom post type
 ----------------------------------------------------------------------------------------------------*/
 
