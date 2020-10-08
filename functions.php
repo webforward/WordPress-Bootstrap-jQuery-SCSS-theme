@@ -48,6 +48,14 @@ function enquire_js() {
 
 add_action('wp_enqueue_scripts', 'enquire_js');
 
+/* `Enquire CSS resources
+----------------------------------------------------------------------------------------------------*/
+function enquire_css() {
+    wp_enqueue_style( 'style', get_template_directory_uri() . '/style.min.css' );
+}
+
+add_action( 'wp_enqueue_scripts', 'enquire_css', 99 );
+
 /* `Add Support for Menus
 ----------------------------------------------------------------------------------------------------*/
 require_once('wp-bootstrap-navwalker/class-wp-bootstrap-navwalker.php');
@@ -289,7 +297,7 @@ add_filter( 'login_headerurl', 'custom_loginlogo_url' );
 ----------------------------------------------------------------------------------------------------*/
 
 function my_login_message() {
-	$message = '<div id="poweredby" style="position:absolute;bottom:10px;right:10px">Powered by <a href="http://www.webfwd.co.uk/" target="_blank">Webforward</a></div>';
+	$message = '<div id="poweredby" style="position:absolute;bottom:10px;right:10px">Powered by <a href="https://www.webfwd.co.uk/" target="_blank">Webforward</a></div>';
 	return $message;
 }
 add_filter('login_message', 'my_login_message');
