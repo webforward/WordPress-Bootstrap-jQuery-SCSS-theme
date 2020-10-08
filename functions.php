@@ -369,6 +369,8 @@ function my_remove_recent_comments_style() {
 remove_action( 'wp_head', 'rest_output_link_wp_head');
 remove_action( 'wp_head', 'wp_oembed_add_discovery_links');
 remove_action( 'template_redirect', 'rest_output_link_header', 11 );
+// Remove dns-prefetch Link from WordPress Head (Frontend)
+remove_action( 'wp_head', 'wp_resource_hints', 2 );
 
 /* `Force admin bar to appear.
 ----------------------------------------------------------------------------------------------------*/
