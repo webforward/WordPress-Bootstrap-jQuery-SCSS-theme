@@ -365,6 +365,10 @@ function my_remove_recent_comments_style() {
 	global $wp_widget_factory;
 	remove_action( 'wp_head', array( $wp_widget_factory->widgets['WP_Widget_Recent_Comments'], 'recent_comments_style'  ) );
 }
+// Remove wp-json
+remove_action( 'wp_head', 'rest_output_link_wp_head');
+remove_action( 'wp_head', 'wp_oembed_add_discovery_links');
+remove_action( 'template_redirect', 'rest_output_link_header', 11 );
 
 /* `Force admin bar to appear.
 ----------------------------------------------------------------------------------------------------*/
