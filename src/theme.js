@@ -8,7 +8,8 @@ window.jQuery = window.$ = $
 import 'bootstrap';
 
 // Turbo SPA
-import * as Turbo from "@hotwired/turbo"
+import * as Turbo from "@hotwired/turbo";
+Turbo.setProgressBarDelay(500);
 
 import './js/header';
 
