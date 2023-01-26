@@ -1,8 +1,4 @@
-# Do not allow access to hidden php files
-RewriteRule ^\.(.*)\.php$ – [F]
-
-# Protect from injection
-RewriteCond %{QUERY_STRING} (\|%3E) [NC,OR]
-RewriteCond %{QUERY_STRING} GLOBALS(=|\[|\%[0-9A-Z]{0,2}) [OR]
-RewriteCond %{QUERY_STRING} _REQUEST(=|\[|\%[0-9A-Z]{0,2})
-RewriteRule ^(.*)$ index.php [F,L]
+order allow,deny
+<Files ~ "\.(js|css|gif|jpg|jpeg|png|webp|svg|webmanifest)$">
+   allow from all
+</Files>

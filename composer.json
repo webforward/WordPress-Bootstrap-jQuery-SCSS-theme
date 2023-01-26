@@ -1,0 +1,11 @@
+{
+    "require": {
+        "kucrut/vite-for-wp": "^0.5.2",
+        "wp-bootstrap/wp-bootstrap-navwalker": "^4.3"
+    },
+    "config": {
+        "allow-plugins": {
+            "composer/installers": true
+        }
+    }
+}

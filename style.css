@@ -1,18 +1,8 @@
 /*
-Theme Name: Webfwd Bootstrap SCSS WordPress Theme
-Theme URI: http://www.webfwd.co.uk/
-Description: Extremely lightweight starter theme with bootstrap, jquery, less and loads of functions ready to go.
+Theme Name: Webforward Bootstrap SCSS WordPress Theme
+Theme URI: https://github.com/webforward/WordPress-Bootstrap-jQuery-SCSS-theme
+Description: Clean and lightweight starter theme based on Bootstrap 5, jQuery 3, SCSS compiled through Vite.
 Author: Webforward
 Author URI: http://www.webfwd.co.uk
-Version: 1.0
+Version: 2.0
 */
-/* Style.less is where you should start wrinting your css and them complie it to style.css.
-If you have not used Less but have a good understanding of CSS and PHP then you will have no problem
-with less, you can download software to automatically convert or use the online tool at http://less2css.org/
-----------------------------------------------------------------------------------------------------*/
-.opacity, a:hover {
-  -webkit-opacity: 0.75;
-  -moz-opacity: 0.75;
-  opacity: 0.75; }
-
-/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,92 @@
+$container-max-widths: (
+        sm: 540px,
+        md: 720px,
+        lg: 960px,
+        xl: 1140px,
+        xxl: 1320px
+);
+
+$grid-breakpoints: (
+        xs: 0,
+        sm: 576px,
+        md: 768px,
+        lg: 992px,
+        xl: 1200px,
+        xxl: 1400px
+);
+
+$xl-down: "max-width: " + (map-get($grid-breakpoints, 'xxl')-1);
+$lg-down: "max-width: " + (map-get($grid-breakpoints, 'xl')-1);
+$md-down: "max-width: " + (map-get($grid-breakpoints, 'lg')-1);
+$sm-down: "max-width: " + (map-get($grid-breakpoints, 'md')-1);
+$xs-down: "max-width: " + (map-get($grid-breakpoints, 'sm')-1);
+
+$xxl-up: "min-width: " + map-get($grid-breakpoints, 'xxl');
+$xl-up: "min-width: " + map-get($grid-breakpoints, 'xl');
+$lg-up: "min-width: " + map-get($grid-breakpoints, 'lg');
+$md-up: "min-width: " + map-get($grid-breakpoints, 'md');
+$sm-up: "min-width: " + map-get($grid-breakpoints, 'sm');
+$xs-up: "min-width: " + map-get($grid-breakpoints, 'xs');
+
+$color1: #1A214D;
+$color2: #44ABE3;
+$color3: #23272A;
+$color4: #878BA3;
+$color5: #F6F6F6;
+//$color6: darken($color5, 20%);
+
+$body-text: $color3;
+$body-bg: $color5;
+
+
+// Bootstrap
+$theme-colors: (
+        "primary": $color1,
+        "secondary": $color2,
+        "success": #198754,
+        "info": #0DCAF0,
+        "warning": #FFC107,
+        "danger": #DC3545,
+        "light": #F8F9FA,
+        "dark": #212529
+);
+
+$border-radius: 0;
+$border-radius-sm: $border-radius;
+$border-radius-lg: $border-radius;
+
+$btn-border-radius: 0;
+
+$spacer: 1.5rem;
+$font-sizes: (
+        1: 2.5rem,
+        2: 2.2rem,
+        3: 1.7rem,
+        4: 1.25rem,
+        5: 1.125rem,
+        6: 1rem
+);
+
+$link-decoration: none;
+//$headings-font-family: var(--bs-headings-font-family);
+//$headings-font-weight: var(--bs-headings-font-weight);
+//$enable-negative-margins: true;
+//$grid-row-columns: 12;
+//$small-font-size: .825em;
+//$spinner-border-width: .2em;
+//$spinner-border-width-sm: .15em;
+
+$table-border-color: lighten(black, 90%);
+$table-group-separator-color: darken($table-border-color, 10%);
+
+
+.bg-color1 { background-color: $color1; }
+.bg-color2 { background-color: $color2; }
+.bg-color3 { background-color: $color3; }
+.bg-color4 { background-color: $color4; }
+.bg-color5 { background-color: $color5; }
+.text-color1 { color: $color1; }
+.text-color2 { color: $color2; }
+.text-color3 { color: $color3; }
+.text-color4 { color: $color4; }
+.text-color5 { color: $color5; }

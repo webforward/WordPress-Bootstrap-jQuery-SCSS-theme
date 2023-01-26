@@ -1,0 +1,33 @@
+{
+  "src/assets/bg-pattern.jpg": {
+    "file": "assets/bg-pattern-d0b15688.jpg",
+    "src": "src/assets/bg-pattern.jpg"
+  },
+  "src/login.css": {
+    "file": "assets/login-91c75983.css",
+    "src": "src/login.css"
+  },
+  "src/theme.css": {
+    "file": "assets/theme-0f41bc68.css",
+    "src": "src/theme.css"
+  },
+  "src/login.js": {
+    "file": "assets/login-944f0578.js",
+    "src": "src/login.js",
+    "isEntry": true,
+    "css": [
+      "assets/login-91c75983.css"
+    ]
+  },
+  "src/theme.js": {
+    "file": "assets/theme-a8c3406b.js",
+    "src": "src/theme.js",
+    "isEntry": true,
+    "css": [
+      "assets/theme-0f41bc68.css"
+    ],
+    "assets": [
+      "assets/bg-pattern-d0b15688.jpg"
+    ]
+  }
+}
