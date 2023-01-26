@@ -2,13 +2,13 @@
   "name": "smart-wp",
   "version": "1.0.0",
   "devDependencies": {
+    "@hotwired/turbo": "^7.2.4",
     "@kucrut/vite-for-wp": "^0.5.2",
     "@popperjs/core": "^2.11.6",
     "@wordpress/base-styles": "^4.16.0",
     "bootstrap": "^5.2.3",
     "jquery": "^3.6.3",
     "sass": "^1.57.1",
-    "turbolinks": "^5.2.0",
     "vite": "^4.0.4"
   },
   "scripts": {

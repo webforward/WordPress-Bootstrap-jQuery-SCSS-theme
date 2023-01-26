@@ -1,8 +1,8 @@
 WordPress Starter Bootstrap jQuery SCSS Theme
 ---------------------------------------------
 
-Clean and lightweight starter theme based on Bootstrap 5, jQuery 3, SCSS, Turbolinks and incorporates loads of functions ready to be 
-turned on and off in the functions.php file.
+Clean and lightweight starter theme based on Bootstrap 5, jQuery 3, SCSS, Turbo and incorporates loads of functions 
+ready to be turned on and off in the functions.php file.
 
 This theme strips WordPress back, removes all the bloat and leaves you with a clean html response, a favicon, a single 
 css resource in the head and a single js resource in the footer. Four requests in total.
@@ -49,7 +49,7 @@ Packages
 - Vite for WP - https://github.com/kucrut/vite-for-wp
 - Bootstrap ^5 (Loaded via NPM)
 - jQuery ^3 (Loaded via NPM)
-- Turbolinks (Loaded via NPM)
+- Turbo (Loaded via NPM)
 - WordPress Core SCSS Styles (Loaded via NPM)
 - Bootstrap Nav Walker (Loaded via Composer) - https://github.com/wp-bootstrap/wp-bootstrap-navwalker
 - Favicon - https://realfavicongenerator.net/
