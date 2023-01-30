@@ -76,7 +76,7 @@ I recommend that you read the entire functions.php and uncomment / comment out f
 - Restore Classic Editor in the admin (Enabled by default)
 - Add img-fluid to images (Enabled by default)
 - Stop CF7 from adding <p> tags automatically
-- Custom Post Type
+- Custom Post Type with Taxonomy
 - Custom Post types in Appearance -> Menu's
 - Custom Excerpt Length
 - Custom Read More Link
