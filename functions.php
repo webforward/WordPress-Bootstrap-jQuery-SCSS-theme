@@ -103,6 +103,11 @@ if (function_exists('register_sidebar'))
         'after_title' => '',
     ));
 
+/* `Restore Classic Editor in the admin (replaces Gutenberg)
+----------------------------------------------------------------------------------------------------*/
+
+add_filter('use_block_editor_for_post', '__return_false', 10);
+
 /* `Add Bootstrap img-fluid to images in the content and post thumbnail
 ----------------------------------------------------------------------------------------------------*/
 

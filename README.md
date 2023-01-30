@@ -73,6 +73,7 @@ I recommend that you read the entire functions.php and uncomment / comment out f
 - Set Post Thumbnail Size
 - Custom Image Sizes
 - Right Sidebar (Enabled by default)
+- Restore Classic Editor in the admin (Enabled by default)
 - Add img-fluid to images (Enabled by default)
 - Stop CF7 from adding <p> tags automatically
 - Custom Post Type
