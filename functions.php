@@ -405,3 +405,13 @@ add_action('wp_enqueue_scripts', function () {
     wp_dequeue_style('global-styles'); // Remove theme.json
     wp_dequeue_style('classic-theme-styles'); // Remove Class Theme Styles
 }, 100);
+
+/* `Add data-turbo="false" to all admin bar links so that Turbo does not mess with the admin
+----------------------------------------------------------------------------------------------------*/
+
+add_action( 'wp_before_admin_bar_render', function() {
+    echo '<div data-turbo="false">';
+} );
+add_action( 'wp_after_admin_bar_render', function() {
+    echo '</dev>';
+} );

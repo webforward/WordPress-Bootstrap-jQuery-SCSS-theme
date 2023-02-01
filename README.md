@@ -93,3 +93,4 @@ I recommend that you read the entire functions.php and uncomment / comment out f
 - Security fixes (Enabled by default)
 - Force admin bar to appear when logged in (Enabled by default)
 - Remove Gutenberg block library from loading inline (Enabled by default)
+- Disable Turbo on WordPress admin bar (Enabled by default)
