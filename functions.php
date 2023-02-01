@@ -90,10 +90,10 @@ add_theme_support('post-thumbnails');
 //add_image_size( 'custom-size', 220, 180 ); // 220 pixels wide by 180 pixels tall, soft proportional crop mode
 //add_image_size( 'homepage-thumb', 220, 180, true ); // (cropped)
 
-/* `Register a sidebar
+/* `Register widgets
 ----------------------------------------------------------------------------------------------------*/
 
-if (function_exists('register_sidebar'))
+add_action('widgets_init', function () {
     register_sidebar(array(
         'name' => 'Sidebar',
         'id' => 'sidebar',
@@ -102,6 +102,7 @@ if (function_exists('register_sidebar'))
         'before_title' => '',
         'after_title' => '',
     ));
+});
 
 /* `Restore Classic Editor in the admin (replaces Gutenberg)
 ----------------------------------------------------------------------------------------------------*/
