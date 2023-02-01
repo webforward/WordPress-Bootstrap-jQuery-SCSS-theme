@@ -108,6 +108,13 @@ if (function_exists('register_sidebar'))
 
 add_filter('use_block_editor_for_post', '__return_false', 10);
 
+/* `Restore Classic Widgets in the admin (replaces Widget blocks)
+----------------------------------------------------------------------------------------------------*/
+
+add_action('after_setup_theme', function () {
+    remove_theme_support('widgets-block-editor');
+});
+
 /* `Add Bootstrap img-fluid to images in the content and post thumbnail
 ----------------------------------------------------------------------------------------------------*/
 
