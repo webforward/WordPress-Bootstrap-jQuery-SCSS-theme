@@ -409,9 +409,22 @@ add_action('wp_enqueue_scripts', function () {
 /* `Add data-turbo="false" to all admin bar links so that Turbo does not mess with the admin
 ----------------------------------------------------------------------------------------------------*/
 
-add_action( 'wp_before_admin_bar_render', function() {
+add_action('wp_before_admin_bar_render', function () {
     echo '<div data-turbo="false">';
-} );
-add_action( 'wp_after_admin_bar_render', function() {
+});
+add_action('wp_after_admin_bar_render', function () {
     echo '</dev>';
-} );
+});
+
+/* `Example shortcode
+----------------------------------------------------------------------------------------------------*/
+//add_shortcode('button', function ($atts) {
+//    $default = array(
+//        'link' => '#',
+//        'text' => 'My Button',
+//        'class' => '',
+//        'target' => ''
+//    );
+//    $atts = shortcode_atts($default, $atts);
+//    return '<a class="btn ' . ($atts['class'] ? ' ' . $atts['class'] : '') . '" target="' . $atts['target'] . '" href="' . $atts['link'] . '">' . $atts['text'] . '</a>';
+//});
