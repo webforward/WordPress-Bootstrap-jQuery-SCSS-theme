@@ -134,6 +134,11 @@ add_filter('the_content', function ($content) {
     $content = preg_replace($pattern, $replacement, $content);
     return $content;
 });
+add_filter('wp_get_attachment_image_attributes', function($attr) {
+    if (strripos($attr['class'], 'img-fluid') !== true)
+        $attr['class'] .= ' img-fluid';
+    return $attr;
+});
 the_post_thumbnail('thumbnail', array('class' => 'img-fluid'));
 
 /* `Stop Contact Form 7 from automatically adding P tags
