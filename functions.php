@@ -90,6 +90,14 @@ add_theme_support('post-thumbnails');
 //add_image_size( 'custom-size', 220, 180 ); // 220 pixels wide by 180 pixels tall, soft proportional crop mode
 //add_image_size( 'homepage-thumb', 220, 180, true ); // (cropped)
 
+/* `Add SVG support in the WordPress media uploader
+----------------------------------------------------------------------------------------------------*/
+
+add_filter('upload_mimes', function($mimes) {
+    $mimes['svg'] = 'image/svg+xml';
+    return $mimes;
+});
+
 /* `Register widgets
 ----------------------------------------------------------------------------------------------------*/
 
