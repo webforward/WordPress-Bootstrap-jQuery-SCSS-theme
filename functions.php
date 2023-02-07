@@ -47,6 +47,19 @@ if (function_exists('acf_add_options_page')) {
 //	));
 }
 
+/* `Close all ACF Sub Groups by default
+----------------------------------------------------------------------------------------------------*/
+
+add_action('acf/input/admin_head', function () {
+    echo <<<HTML
+    <script type="text/javascript">
+        jQuery(function($){
+            $('.acf-postbox .acf-postbox').addClass('closed');
+        });
+    </script>
+    HTML;
+});
+
 /* `Enquire Vite resources
 ----------------------------------------------------------------------------------------------------*/
 add_action('wp_enqueue_scripts', function () {

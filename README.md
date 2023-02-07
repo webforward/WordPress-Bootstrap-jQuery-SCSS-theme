@@ -64,8 +64,8 @@ I recommend that you read the entire functions.php and uncomment / comment out f
 - Output of template name in footer
 - Output of Bootstrap responsive size in header (Enabled by default)
 - ACF Theme Settings (Enabled by default if ACF plugin installed)
+- Close all ACF Sub Groups (Enabled by default)
 - Vite Support (Enabled by default)
-
 - Ability to load custom JS scripts
 - Ability to load custom CSS scripts
 - Top Navigation (Enabled by default)
