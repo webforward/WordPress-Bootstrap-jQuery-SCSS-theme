@@ -4,7 +4,7 @@
     "src": "src/assets/bg-pattern.jpg"
   },
   "src/login.css": {
-    "file": "assets/login-91c75983.css",
+    "file": "assets/login-449bafe2.css",
     "src": "src/login.css"
   },
   "src/theme.css": {
@@ -12,11 +12,11 @@
     "src": "src/theme.css"
   },
   "src/login.js": {
-    "file": "assets/login-944f0578.js",
+    "file": "assets/login-aefebf37.js",
     "src": "src/login.js",
     "isEntry": true,
     "css": [
-      "assets/login-91c75983.css"
+      "assets/login-449bafe2.css"
     ]
   },
   "src/theme.js": {
