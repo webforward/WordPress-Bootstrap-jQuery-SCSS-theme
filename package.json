@@ -9,7 +9,7 @@
     "bootstrap": "^5.2.3",
     "jquery": "^3.6.3",
     "sass": "^1.57.1",
-    "vite": "^4.0.4"
+    "vite": "^4.0.5"
   },
   "scripts": {
     "dev": "vite",
