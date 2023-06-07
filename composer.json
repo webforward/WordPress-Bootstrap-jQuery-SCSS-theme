@@ -1,7 +1,8 @@
 {
     "require": {
         "kucrut/vite-for-wp": "^0.5.2",
-        "wp-bootstrap/wp-bootstrap-navwalker": "^4.3"
+        "wp-bootstrap/wp-bootstrap-navwalker": "^4.3",
+        "justintadlock/hybrid-breadcrumbs": "^1.0"
     },
     "config": {
         "allow-plugins": {

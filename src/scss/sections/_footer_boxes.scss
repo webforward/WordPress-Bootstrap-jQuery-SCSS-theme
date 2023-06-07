@@ -1,0 +1,22 @@
+section.footer_boxes {
+
+  .box {
+    display: flex;
+    flex-direction: column;
+    background: map-get($theme-colors, 'color1');
+    padding: 3.5rem;
+    border-top-right-radius: 2rem;
+    min-height: 100%;
+    color: white;
+    @media ($lg-down) {
+      padding: 2rem;
+    }
+    a {
+      color: white !important;
+      text-decoration: underline;
+    }
+    .editable-content {
+      flex-grow: 1;
+    }
+  }
+}

@@ -1,0 +1,24 @@
+#builder > section.promo_boxes {
+  position: relative;
+
+  a.box {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    background: white;
+
+    border-top-right-radius: 2rem;
+    min-height: 100%;
+    @include drop-shadow;
+
+    h3 {
+      padding: 2rem;
+
+    }
+
+    &:hover h3 {
+      color: map-get($theme-colors, 'color4');
+    }
+
+  }
+}

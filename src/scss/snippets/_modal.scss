@@ -1,0 +1,144 @@
+.alert-modal:after {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(255,255,255, 0.7);
+  z-index: 100001;
+  top: 0;
+  left: 0;
+  content: '';
+  display: block;
+}
+
+.alert-modal .content {
+  background: white;
+  padding: 50px 50px 20px;
+  position: absolute;
+  z-index: 100002;
+  width: 770px;
+  top: 3rem;
+  left: 0;
+  right: 0;
+  margin: auto;
+  text-align: center;
+  -webkit-box-shadow: 0 0 5px 4px rgba(0,0,0,0.1);
+  -moz-box-shadow: 0 0 5px 4px rgba(0,0,0,0.1);
+  box-shadow: 0 0 5px 4px rgba(0,0,0,0.1);
+}
+
+.alert-modal .close {
+  text-align: right;
+  cursor: pointer;
+  font-weight: bold;
+  color: #354b74;
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: end;
+  align-content: center;
+  align-items: center;
+  font-size: 1.2em;
+}
+
+.alert-modal .close img {
+  max-height: 40px;
+  align-self: baseline;
+}
+
+.alert-modal .close p {
+  margin-right: 6px;
+}
+
+.alert-modal .close:hover {
+  cursor: pointer;
+  opacity: 0.75;
+}
+
+.alert-modal .title {
+  font-weight: bold;
+  font-size: 2em;
+  line-height: 36px;
+  color: #354b74;
+  margin-bottom: 30px;
+}
+
+.alert-modal .text {
+  color: #242b33;
+  font-size: 1.3em;
+  line-height: 29px;
+}
+
+.alert-modal .buttons {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  //padding: 0 70px;
+
+}
+
+.alert-modal .buttons a {
+  margin: 0 10px 30px 10px;
+}
+
+.alert-modal .buttons a:hover {
+  cursor: pointer;
+  opacity: 0.75;
+}
+
+.alert-modal .buttons a:first-child {
+  color: white;
+  border-radius: 30px;
+  font-weight: bold;
+  display: inline-block;
+  font-size: 1.2em;
+  padding: 15px 30px 17px;
+  min-width: 180px;
+  background: #E42085;
+}
+
+.alert-modal .buttons a:last-child {
+  color: white;
+  border-radius: 30px;
+  font-weight: bold;
+  display: inline-block;
+  font-size: 1.2em;
+  padding: 15px 30px 17px;
+  min-width: 180px;
+  background: #2C4560;
+}
+
+.alert-modal .buttons {
+  margin-top: 40px;
+}
+
+@media (max-width: 850px){
+  .alert-modal .content {
+    width: 80%;
+  }
+  .alert-modal .buttons {
+    padding: 0;
+  }
+}
+
+@media (max-width: 500px){
+  .alert-modal .content {
+    width: 90%;
+    padding: 30px 30px 20px;
+  }
+  .alert-modal .content .title {
+    font-size: 1.6em;
+    line-height: 32px;
+  }
+  .alert-modal .content .text {
+    font-size: 1.1em;
+    line-height: 26px;
+  }
+}
+
+@media (max-width: 400px){
+  .alert-modal .content .buttons {
+    font-size: 0.9em;
+  }
+}

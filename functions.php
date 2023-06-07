@@ -24,7 +24,8 @@ const CORE_UPGRADE_SKIP_NEW_BUNDLED = true; // Disables installation of twentytw
 add_action('wp_head', function () {
     echo '<div style="position: fixed; z-index:9999; color:red"><div class="d-block d-sm-none">XS</div>
     <div class="d-none d-sm-block d-md-none">SM</div><div class="d-none d-md-block d-lg-none">MD</div>
-    <div class="d-none d-lg-block d-xl-none">LG</div><div class="d-none d-xl-block">XL</div></div>';
+    <div class="d-none d-lg-block d-xl-none">LG</div><div class="d-none d-xl-block d-xxl-none">XL</div>
+    <div class="d-none d-xxl-block">XXL</div></div>';
 });
 
 
@@ -59,6 +60,20 @@ add_action('wp_enqueue_scripts', function () {
     );
 });
 
+/* `Tell Vite for WP to only use dev mode if logged in.
+----------------------------------------------------------------------------------------------------*/
+//add_action('init', function () {
+//    if (is_user_logged_in()) {
+//        add_filter('vite_for_wp__manifest_data', function ($manifest) {
+//
+////            $manifest_path = "{$manifest_dir}/{$file_name}.json";
+////            $manifest_content = file_get_contents( $manifest_path );
+//            print_r($manifest);
+//            exit;
+//        }, 1000);
+//    }
+//});
+
 /* `Enquire Custom JavaScript resources
 ----------------------------------------------------------------------------------------------------*/
 
@@ -90,10 +105,10 @@ add_theme_support('post-thumbnails');
 //add_image_size( 'custom-size', 220, 180 ); // 220 pixels wide by 180 pixels tall, soft proportional crop mode
 //add_image_size( 'homepage-thumb', 220, 180, true ); // (cropped)
 
-/* `Register a sidebar
+/* `Register widgets
 ----------------------------------------------------------------------------------------------------*/
 
-if (function_exists('register_sidebar'))
+add_action('widgets_init', function () {
     register_sidebar(array(
         'name' => 'Sidebar',
         'id' => 'sidebar',
@@ -102,6 +117,46 @@ if (function_exists('register_sidebar'))
         'before_title' => '',
         'after_title' => '',
     ));
+
+    register_sidebar(array(
+        'name' => 'Footer 1 (left)',
+        'id' => 'footer1',
+        'before_widget' => '<div id="%1$s" class="widget %2$s">',
+        'after_widget' => '</div>',
+        'before_title' => '',
+        'after_title' => '',
+    ));
+
+    register_sidebar(array(
+        'name' => 'Footer 2 (left)',
+        'id' => 'footer2',
+        'before_widget' => '<div id="%1$s" class="widget %2$s">',
+        'after_widget' => '</div>',
+        'before_title' => '',
+        'after_title' => '',
+    ));
+
+    register_sidebar(array(
+        'name' => 'Footer 3 (right)',
+        'id' => 'footer3',
+        'before_widget' => '<div id="%1$s" class="widget %2$s">',
+        'after_widget' => '</div>',
+        'before_title' => '',
+        'after_title' => '',
+    ));
+});
+
+/* `Restore Classic Editor in the admin (replaces Gutenberg)
+----------------------------------------------------------------------------------------------------*/
+
+add_filter('use_block_editor_for_post', '__return_false', 10);
+
+/* `Restore Classic Widgets in the admin (replaces Widget blocks)
+----------------------------------------------------------------------------------------------------*/
+
+add_action('after_setup_theme', function () {
+    remove_theme_support('widgets-block-editor');
+});
 
 /* `Add Bootstrap img-fluid to images in the content and post thumbnail
 ----------------------------------------------------------------------------------------------------*/
@@ -113,6 +168,11 @@ add_filter('the_content', function ($content) {
     $content = preg_replace($pattern, $replacement, $content);
     return $content;
 });
+add_filter('wp_get_attachment_image_attributes', function ($attr) {
+    if (strripos($attr['class'], 'img-fluid') !== true)
+        $attr['class'] .= ' img-fluid';
+    return $attr;
+});
 the_post_thumbnail('thumbnail', array('class' => 'img-fluid'));
 
 /* `Stop Contact Form 7 from automatically adding P tags
@@ -123,22 +183,59 @@ the_post_thumbnail('thumbnail', array('class' => 'img-fluid'));
 /* `Create custom post type
 ----------------------------------------------------------------------------------------------------*/
 
-//add_action('init', function () {
-//    // Example - Testimonials
-//    // Don't forget to create single-<post_type>.php and archive-<post_type>.php
-//    register_post_type('testimonials',
-//        // CPT Options
-//        array(
-//            'labels' => array(
-//                'name' => __('Testimonials'),
-//                'singular_name' => __('Testimonial')
-//            ),
-//            'public' => true,
-//            'has_archive' => true,
-//            'rewrite' => array('slug' => 'testimonials'),
-//        )
-//    );
-//});
+add_action('init', function () {
+    // Example - Testimonials
+    // Don't forget to create single-<post_type>.php and archive-<post_type>.php
+
+    register_post_type('programmes',
+        array(
+            'labels' => array(
+                'name' => __('Programmes'),
+                'singular_name' => __('Programme')
+            ),
+            'public' => true,
+            'has_archive' => false,
+            'rewrite' => array('slug' => 'programme'),
+            'menu_icon' => 'dashicons-welcome-learn-more'
+        )
+    );
+
+    register_taxonomy('levels', array('programmes'), array(
+        'hierarchical' => true,
+        'labels' => array(
+            'name' => __('Levels'),
+            'singular_name' => __('Level')
+        ),
+        'show_ui' => true,
+        'show_admin_column' => true,
+        'query_var' => true,
+        'rewrite' => array('slug' => 'level'),
+    ));
+
+    register_taxonomy('sectors', array('programmes'), array(
+        'hierarchical' => true,
+        'labels' => array(
+            'name' => __('Sectors'),
+            'singular_name' => __('Sector')
+        ),
+        'show_ui' => true,
+        'show_admin_column' => true,
+        'query_var' => true,
+        'rewrite' => array('slug' => 'sector'),
+    ));
+
+    register_post_type('testimonials',
+        array(
+            'labels' => array(
+                'name' => __('Testimonials'),
+                'singular_name' => __('Testimonial')
+            ),
+            'public' => true,
+            'has_archive' => false,
+            'menu_icon' => 'dashicons-admin-comments'
+        )
+    );
+});
 
 /* `Show Post Type in admin menus
 ----------------------------------------------------------------------------------------------------*/
@@ -190,16 +287,16 @@ the_post_thumbnail('thumbnail', array('class' => 'img-fluid'));
 /* `Set your custom excerpt length
 ----------------------------------------------------------------------------------------------------*/
 
-//add_filter('excerpt_length', function ($length) {
-//    return 30;
-//}, 999);
+add_filter('excerpt_length', function ($length) {
+    return 30;
+}, 999);
 
 /* `The "Read more" link after the excerpt
 ----------------------------------------------------------------------------------------------------*/
 
-//add_filter('excerpt_more', function ($more) {
-//    return '<p><a class="read-more" href="' . get_permalink(get_the_ID()) . '">Read more »</a></p>';
-//});
+add_filter('excerpt_more', function ($more) {
+    return '<p><a class="read-more" href="' . get_permalink(get_the_ID()) . '">Read more »</a></p>';
+});
 
 /* `Disable comments completely
 ----------------------------------------------------------------------------------------------------*/
@@ -299,11 +396,11 @@ add_filter('login_message', function () {
 /* `Give 'Posts' a custom name in the admin
 ----------------------------------------------------------------------------------------------------*/
 
-//add_action('admin_menu', function () {
-//    global $menu;
-//    global $submenu;
-//    $menu[5][0] = 'News';
-//});
+add_action('admin_menu', function () {
+    global $menu;
+    global $submenu;
+    $menu[5][0] = 'News';
+});
 
 /* `Fix translate bug in Chrome v45
 ----------------------------------------------------------------------------------------------------*/
@@ -380,3 +477,47 @@ add_action('wp_enqueue_scripts', function () {
     wp_dequeue_style('global-styles'); // Remove theme.json
     wp_dequeue_style('classic-theme-styles'); // Remove Class Theme Styles
 }, 100);
+
+/* `Add data-turbo="false" to all admin bar links so that Turbo does not mess with the admin
+----------------------------------------------------------------------------------------------------*/
+
+add_action('wp_before_admin_bar_render', function () {
+    echo '<div data-turbo="false">';
+});
+add_action('wp_after_admin_bar_render', function () {
+    echo '</dev>';
+});
+
+/* `Add SVG support in the WordPress media uploader
+----------------------------------------------------------------------------------------------------*/
+
+add_filter('upload_mimes', function ($mimes) {
+    $mimes['svg'] = 'image/svg+xml';
+    return $mimes;
+});
+
+/* `Example shortcode
+----------------------------------------------------------------------------------------------------*/
+add_shortcode('button', function ($attributes) {
+    $default = array(
+        'link' => '#',
+        'text' => 'My Button',
+        'class' => '',
+        'target' => ''
+    );
+    $attributes = shortcode_atts($default, $attributes);
+    return '<a class="btn btn-outline arrow ' . $attributes['class'] . '" target="' . $attributes['target'] . '" href="' . $attributes['link'] . '">' . $attributes['text'] . '</a>';
+});
+
+/* `Close all ACF Groups by default
+----------------------------------------------------------------------------------------------------*/
+
+add_action('acf/input/admin_head', function () {
+    echo <<<HTML
+    <script type="text/javascript">
+        jQuery(function($){
+            $('.acf-postbox').addClass('closed');
+        });
+    </script>
+    HTML;
+});

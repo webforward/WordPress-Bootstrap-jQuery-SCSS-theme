@@ -1,33 +1,26 @@
 {
-  "src/assets/bg-pattern.jpg": {
-    "file": "assets/bg-pattern-d0b15688.jpg",
-    "src": "src/assets/bg-pattern.jpg"
-  },
   "src/login.css": {
-    "file": "assets/login-91c75983.css",
+    "file": "assets/login-449bafe2.css",
     "src": "src/login.css"
   },
+  "src/login.js": {
+    "css": [
+      "assets/login-449bafe2.css"
+    ],
+    "file": "assets/login-aefebf37.js",
+    "isEntry": true,
+    "src": "src/login.js"
+  },
   "src/theme.css": {
-    "file": "assets/theme-0f41bc68.css",
+    "file": "assets/theme-0738842e.css",
     "src": "src/theme.css"
   },
-  "src/login.js": {
-    "file": "assets/login-944f0578.js",
-    "src": "src/login.js",
-    "isEntry": true,
-    "css": [
-      "assets/login-91c75983.css"
-    ]
-  },
   "src/theme.js": {
-    "file": "assets/theme-5b4c2c26.js",
-    "src": "src/theme.js",
-    "isEntry": true,
     "css": [
-      "assets/theme-0f41bc68.css"
+      "assets/theme-0738842e.css"
     ],
-    "assets": [
-      "assets/bg-pattern-d0b15688.jpg"
-    ]
+    "file": "assets/theme-d4cf223a.js",
+    "isEntry": true,
+    "src": "src/theme.js"
   }
 }

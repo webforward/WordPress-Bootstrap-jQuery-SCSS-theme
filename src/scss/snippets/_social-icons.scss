@@ -1,0 +1,15 @@
+ul.social-icons {
+  display: flex;
+  list-style: none;
+  margin: 0 -0.4em;
+  padding: 0;
+  li {
+    margin: 0 0.4em;
+    a {
+      display: block;
+      svg {
+
+      }
+    }
+  }
+}

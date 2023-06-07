@@ -1,0 +1,253 @@
+@mixin drop-shadow {
+  box-shadow: 4px 4px 12px 0 rgba(0, 0, 0, 0.15);
+}
+
+@mixin regular {
+  font-weight: 400;
+}
+
+@mixin semibold {
+  font-weight: 600;
+}
+
+@mixin bold {
+  font-weight: 700;
+}
+
+@mixin black {
+  font-weight: 800;
+}
+
+@mixin acumin-pro-regular {
+  font-family: "acumin-pro", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  @include line-height-crop-fix(1.3);
+}
+
+@mixin acumin-pro-semibold {
+  font-family: "acumin-pro", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  @include line-height-crop-fix(1.3);
+}
+
+@mixin acumin-pro-bold {
+  font-family: "acumin-pro", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  @include line-height-crop-fix(1.3);
+}
+
+@mixin acumin-pro-black {
+  font-family: "acumin-pro", sans-serif;
+  font-weight: 800;
+  font-style: normal;
+  @include line-height-crop-fix(1.3);
+}
+
+@mixin acumin-pro-ec-semibold {
+  font-family: "acumin-pro-extra-condensed", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  @include line-height-crop-fix(1.3);
+}
+
+@mixin acumin-pro-ec-black {
+  font-family: "acumin-pro-extra-condensed", sans-serif;
+  font-weight: 800;
+  font-style: normal;
+  @include line-height-crop-fix(1.3);
+}
+
+@mixin line-height-crop-fix($line-height) {
+  &::before {
+    content: '';
+    display: block;
+    height: 0;
+    width: 0;
+    margin-top: calc((1 - #{$line-height}) * 0.5em);
+  }
+}
+
+// Generic
+@each $name, $color in $theme-colors {
+  body {
+    //General
+    .bg-#{$name} {
+      background-color: $color;
+    }
+
+    .bg-#{$name}-alt {
+      background-color: map-get($bg-colors, #{$name});
+    }
+
+    .text-#{$name} {
+      color: $color !important;
+    }
+
+    .border-#{$name} {
+      border-color: $color !important;
+    }
+
+    //Alerts
+    .alert.alert-#{$name} {
+      a {
+        color: $color !important;
+      }
+    }
+
+    //Button
+    .btn.#{$name} {
+      color: $color !important;
+
+      &:hover {
+        color: white !important;
+        background: $color !important;
+        opacity: 1 !important;
+
+        &.arrow:after {
+          background-color: white !important;
+        }
+      }
+
+      &.btn-outline {
+        border: solid 2px $color !important;
+      }
+
+      &.arrow {
+        &:after {
+          background-color: $color !important;
+        }
+      }
+    }
+
+    //Editable Content
+    .editable-content {
+      a.#{$name} {
+        color: $color;
+      }
+
+      ul.#{$name}, ol.#{$name} {
+        li {
+          &::marker {
+            color: $color !important;
+          }
+        }
+      }
+    }
+
+    //Sidebar
+    #sidebar {
+    }
+  }
+}
+
+// Theme Specific
+@each $name, $color in $theme-colors {
+  body.#{$name} {
+    //General
+    .bg-theme {
+      background-color: $color;
+    }
+
+    .bg-theme-alt {
+      background-color: map-get($bg-colors, #{$name});
+    }
+
+    .text-theme {
+      color: $color;
+    }
+
+    .border-theme {
+      border-color: $color;
+    }
+
+    //Button
+    .btn.theme, .btn.btn-theme {
+      color: $color;
+
+      &:hover {
+        color: white;
+        background: $color;
+        opacity: 1 !important;
+
+        &.arrow:after {
+          background-color: white;
+        }
+      }
+
+      &.btn-outline {
+        border: solid 2px $color;
+      }
+
+      &.arrow {
+        &:after {
+          background-color: $color;
+        }
+      }
+    }
+
+    //Editable Content
+    .editable-content {
+      a {
+        color: $color;
+      }
+
+      ul, ol {
+        li {
+          &::marker {
+            color: $color;
+          }
+        }
+      }
+    }
+
+    // Breadcrumbs
+    .breadcrumbs {
+      a {
+        color: $color;
+      }
+    }
+
+    //Sidebar
+    #sidebar {
+      .menu-container {
+        ul.menu {
+          li {
+            border-left: solid 4px lighten($color, 25%);
+
+            &.current-menu-item {
+              border-left: solid 4px $color;
+            }
+          }
+        }
+      }
+    }
+
+    // Theme Builder
+    .most_popular a.item-programme:hover,
+    .programmes_by_level a.item-programme:hover,
+    .related_programmes a.item-programme:hover {
+      background: $color !important;
+
+      .btn, .btn:hover {
+        color: white;
+
+        background: $color;
+
+        &.arrow:after {
+          background-color: white;
+        }
+
+
+        &.btn-outline {
+          border: solid 2px white;
+        }
+
+      }
+
+    }
+
+  }
+}

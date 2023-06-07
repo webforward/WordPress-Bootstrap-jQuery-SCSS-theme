@@ -1,17 +1,93 @@
-@import '@wordpress/base-styles/colors';
-@import '@wordpress/base-styles/variables';
-@import '@wordpress/base-styles/mixins';
-@import '@wordpress/base-styles/breakpoints';
-@import '@wordpress/base-styles/animations';
-@import '@wordpress/base-styles/z-index';
-@import '@wordpress/base-styles/default-custom-properties';
+@import url("https://use.typekit.net/juo3anb.css");
 
 @import "variables";
 @import 'bootstrap/scss/bootstrap';
+@import 'mixins';
 
-body {
-  // Demonstrating assets being compiled from src/assets to build/assets
-  background: no-repeat url("../assets/bg-pattern.jpg") center center;
-  background-size: cover;
-  min-height: 100vh;
+@import "slick-carousel/slick/slick";
+@import 'wp.scss/wp';
+@import 'sal.js/src/sal.scss';
+
+@import "general";
+
+@import 'sections/header';
+@import 'sections/footer';
+@import 'sections/sidebar';
+@import 'sections/headline';
+@import 'sections/homepage-hero';
+@import 'sections/homepage-people';
+@import 'sections/related_programmes';
+@import 'sections/footer_logos';
+@import 'sections/footer_boxes';
+
+@import 'snippets/social-icons';
+@import 'snippets/buttons';
+@import 'snippets/breadcrumbs';
+@import 'snippets/features';
+@import 'snippets/item-programme';
+@import 'snippets/people';
+@import 'snippets/modal';
+
+@import 'builder/most_popular';
+@import 'builder/text_with_image';
+@import 'builder/centered_logos';
+@import 'builder/discover_boxes';
+@import 'builder/testimonials';
+@import 'builder/striped_bar';
+@import 'builder/programmes_by_level';
+@import 'builder/programmes_by_sector';
+@import 'builder/link_list';
+@import 'builder/accordions';
+@import 'builder/text_text';
+@import 'builder/team';
+@import 'builder/promo_boxes';
+@import "builder/solution_buttons";
+@import "builder/call_to_action";
+
+.single-programmes {
+  .accordion {
+    margin-top: 2.66rem;
+    .accordion-item {
+      margin: 6px 0;
+      position: relative;
+      border-left-style: solid;
+      border-left-width: 6px;
+      border-top-width: 0;
+      border-right-width: 0;
+      border-bottom-width: 0;
+      background: white;
+
+      &:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: -1;
+        @include drop-shadow;
+      }
+
+      .accordion-button {
+        position: relative;
+        color: $body-text;
+        padding: 1.7rem 2rem 1.7rem 4.5rem;
+        background: transparent;
+        border-bottom: 0 none;
+        margin: 0;
+        outline: none !important;
+        box-shadow: none;
+        &:after {
+          background-image: var(--bs-accordion-btn-icon);
+          position: absolute;
+          left: 2rem;
+        }
+      }
+      .accordion-body {
+        padding: 0 2rem 1.25rem 4.5rem;
+      }
+    }
+  }
 }
+
+

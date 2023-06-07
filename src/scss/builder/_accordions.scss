@@ -1,0 +1,97 @@
+#builder > section.accordions {
+
+  .accordion {
+    .accordion-item {
+
+      margin: 6px 0;
+      position: relative;
+      border-left-style: solid;
+      border-left-width: 6px;
+      border-top-width: 0;
+      border-right-width: 0;
+      border-bottom-width: 0;
+      background: white;
+
+      &:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: -1;
+        @include drop-shadow;
+      }
+
+      .accordion-button {
+        position: relative;
+        color: $body-text;
+        padding: 1.7rem 2rem 1.7rem 4.5rem;
+        background: transparent;
+        border-bottom: 0 none;
+        margin: 0;
+        outline: none !important;
+        box-shadow: none;
+        &:after {
+          background-image: var(--bs-accordion-btn-icon);
+          position: absolute;
+          left: 2rem;
+        }
+      }
+      .accordion-body {
+        padding: 0 2rem 1.25rem 4.5rem;
+      }
+    }
+  }
+
+  ul.links {
+    list-style: none;
+    padding: 0;
+    li {
+      margin: 6px 0;
+      a {
+        position: relative;
+        display: block;
+        padding: 1.4rem;
+        border-left-style: solid;
+        border-left-width: 6px;
+        background: white;
+        font-weight: 700;
+        &:hover {
+          color: $body-text;
+        }
+
+        &:before {
+          content: "";
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          z-index: -1;
+          @include drop-shadow;
+        }
+
+        &:after {
+          content: "";
+          position: absolute;
+          width: 23px;
+          height: 23.24px;
+          top: 1.6rem;
+          right: 2rem;
+          background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='23' height='23.243' viewBox='0 0 23 23.243'%3E%3Cg id='arrow-right' transform='translate(1.5 1.886)'%3E%3Cline id='Line_24' data-name='Line 24' x2='19' transform='translate(0 9.735)' fill='none' stroke='%23495a69' stroke-linecap='round' stroke-linejoin='round' stroke-width='3'/%3E%3Cpath id='Path_2117' data-name='Path 2117' d='M12,5l9.5,9.5L12,24' transform='translate(-1.5 -4.765)' fill='none' stroke='%23495a69' stroke-linecap='round' stroke-linejoin='round' stroke-width='3'/%3E%3C/g%3E%3C/svg%3E%0A");
+        }
+        .image {
+          float: left;
+          margin: -0.55rem 1rem 0 0;
+          vertical-align: middle;
+          img {
+            height: 45px;
+            width: 45px;
+            object-fit: contain;
+          }
+        }
+      }
+    }
+  }
+}

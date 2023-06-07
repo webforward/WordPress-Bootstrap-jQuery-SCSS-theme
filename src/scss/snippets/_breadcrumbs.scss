@@ -1,0 +1,6 @@
+.breadcrumbs {
+  @include line-height-crop-fix(1.3);
+  a {
+    text-decoration: underline;
+  }
+}

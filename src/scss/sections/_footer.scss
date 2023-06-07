@@ -1,0 +1,56 @@
+#footer {
+  position: relative;
+  color: white;
+  z-index: 2000;
+
+  margin: 0 -30px;
+  padding: 0 30px;
+
+  a {
+    color: white;
+  }
+
+  .widget {
+    &.widget_nav_menu {
+      @include acumin-pro-black;
+      font-size: 1.33em;
+      ul {
+        list-style: none;
+        padding: 0;
+        li {
+          a {
+            margin: 3px 0;
+            display: block;
+          }
+          ul {
+            display: none;
+          }
+        }
+      }
+    }
+
+    &.widget_text {
+      h6 {
+        font-weight: 700;
+        font-size: 1.33em;
+      }
+    }
+  }
+
+  .copyright {
+    font-size: 0.77em;
+    min-height: 100%;
+    display: flex;
+    align-items: center;
+    a {
+      text-decoration: underline;
+      padding: 0 10px;
+    }
+    p {
+      margin: 0;
+    }
+  }
+  ul.social-icons {
+    justify-content: flex-end;
+  }
+}

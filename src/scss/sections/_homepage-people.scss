@@ -1,0 +1,26 @@
+section.homepage-people {
+  margin: 0 -2rem;
+  //padding-bottom: 380px;
+  background-position: bottom center;
+  background-repeat: repeat-x;
+
+  p {
+    color: black;
+  }
+
+  .buttons {
+    a {
+      margin: 0 0.5rem;
+      background: map-get($theme-colors, 'color2');
+      border: 0 none !important;
+      color: white;
+      &:after {
+        display: none;
+      }
+    }
+    br {
+      display: none;
+    }
+  }
+
+}

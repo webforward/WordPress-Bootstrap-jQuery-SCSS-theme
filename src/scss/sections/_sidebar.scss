@@ -1,0 +1,24 @@
+#sidebar {
+  min-height: 100%;
+  .menu-container {
+    margin-bottom: 3rem;
+    h6 {
+      margin-bottom: 2rem;
+    }
+    ul.menu {
+      list-style: none;
+      padding: 0;
+      li {
+        border-left: solid 4px lighten(map-get($theme-colors, 'color1'), 50%);
+        &.current-menu-item {
+          border-left: solid 4px map-get($theme-colors, 'color1');
+        }
+        a {
+          display: block;
+          color: $body-text;
+          padding: 8px 8px 8px 25px;
+        }
+      }
+    }
+  }
+}

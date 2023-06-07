@@ -1,0 +1,27 @@
+section.headline {
+  overflow: hidden;
+  color: white;
+  background: map-get($theme-colors, 'color1');
+  border-bottom-right-radius: 4em;
+  @include semibold;
+
+  .section {
+    background: white;
+    color: map-get($theme-colors, 'color1');
+    text-transform: uppercase;
+    padding: 12px 30px 12px 1000vw;
+    border-top-right-radius: 100vh;
+    border-bottom-right-radius: 100vh;
+    display: inline-block;
+    margin-left: -1000vw;
+
+
+  }
+
+  h1 {
+
+  }
+  p {
+    opacity: .85;
+  }
+}

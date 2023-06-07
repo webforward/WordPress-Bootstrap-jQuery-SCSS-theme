@@ -1,0 +1,145 @@
+#header {
+  margin: -130px -30px 0;
+  padding: 35px 30px;
+  z-index: 1000;
+  position: fixed;
+  width: 100vw;
+  background: rgba(255,255,255,0.95);
+
+  @media ($sm-down) {
+    position: relative;
+    margin-top: 0;
+    width: auto;
+  }
+
+  @media ($xs-down) {
+    padding: 40px 2rem;
+  }
+
+  .logo {
+    @media ($xs-down) {
+      svg {
+        height: 38px;
+        width: auto;
+      }
+    }
+  }
+
+  .telephone {
+    display: block;
+    padding: 2px 0;
+
+    svg {
+      margin-right: 1rem;
+      vertical-align: middle;
+    }
+
+    @include acumin-pro-ec-black;
+    font-size: 32px;
+    color: #495A69;
+  }
+
+  .menu-button {
+    color: #495A69;
+    @media ($sm-up) {
+      border: solid 2px map-get($theme-colors, 'color4');
+      border-radius: 5px;
+      background: white;
+      padding: 15px 50px 15px 17px;
+      @include acumin-pro-ec-black;
+      font-size: 24px;
+      line-height: 24px;
+
+      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='22.754' height='16' viewBox='0 0 22.754 16'%3E%3Cg id='Menu_Burger' data-name='Menu Burger' transform='translate(39.399 134)'%3E%3Cpath id='Path_1653' data-name='Path 1653' d='M117.255,89.376H97.763a1.631,1.631,0,1,1,0-3.262h19.491a1.631,1.631,0,1,1,0,3.262Z' transform='translate(-135.531 -220.114)' fill='%23e42085'/%3E%3Cpath id='Path_1654' data-name='Path 1654' d='M117.255,246.416H97.763a1.631,1.631,0,0,1,0-3.262h19.491a1.631,1.631,0,0,1,0,3.262Z' transform='translate(-135.531 -370.785)' fill='%23e42085'/%3E%3Cpath id='Path_1655' data-name='Path 1655' d='M117.255,403.446H97.763a1.631,1.631,0,1,1,0-3.262h19.491a1.631,1.631,0,1,1,0,3.262Z' transform='translate(-135.531 -521.446)' fill='%23e42085'/%3E%3C/g%3E%3C/svg%3E%0A") no-repeat right 17px center;
+
+    }
+    @media ($xs-down) {
+      border: 0 none;
+      font-size: 14px;
+      font-weight: 700;
+      padding: 10px 49px 10px 15px;
+      background: transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='37' height='37' viewBox='0 0 37 37'%3E%3Cg id='Group_1721' data-name='Group 1721' transform='translate(-361 -40)'%3E%3Cg id='Vertical_Navigation_Dots' data-name='Vertical Navigation Dots' transform='translate(361 40)'%3E%3Ccircle id='Ellipse_28' data-name='Ellipse 28' cx='18.5' cy='18.5' r='18.5' fill='%2381c8d7' opacity='0.292'/%3E%3C/g%3E%3Cg id='Group_1177' data-name='Group 1177' transform='translate(410.166 185.846)'%3E%3Cpath id='Path_1653' data-name='Path 1653' d='M112.346,88.618H97.384a1.252,1.252,0,1,1,0-2.5h14.961a1.252,1.252,0,1,1,0,2.5Z' transform='translate(-135.531 -220.114)' fill='%232e4c77'/%3E%3Cpath id='Path_1654' data-name='Path 1654' d='M112.346,245.658H97.384a1.252,1.252,0,0,1,0-2.5h14.961a1.252,1.252,0,1,1,0,2.5Z' transform='translate(-135.531 -371.752)' fill='%232e4c77'/%3E%3Cpath id='Path_1655' data-name='Path 1655' d='M112.346,402.688H97.384a1.252,1.252,0,1,1,0-2.5h14.961a1.252,1.252,0,1,1,0,2.5Z' transform='translate(-135.531 -523.38)' fill='%232e4c77'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E%0A") no-repeat right center;
+    }
+
+  }
+}
+
+body {
+
+  #menu {
+    position: fixed;
+    top: 0;
+    height: 100vh;
+    overflow: auto;
+    background: map-get($theme-colors, 'theme1');
+    color: white;
+    padding: 2.6rem 1.5rem;
+    display: flex;
+    flex-direction:column;
+    justify-content: space-around;
+    z-index: 99998;
+
+
+    width: 90vw;
+    right: -95vw;
+
+    @media ($sm-up) {
+      width: 75vw;
+      right: -80vw;
+      padding: 4rem;
+    }
+
+    @media ($md-up) {
+      width: 55vw;
+      right: -65vw;
+    }
+
+    @media ($lg-up) {
+      width: 50vw;
+      right: -60vw;
+      padding-right: calc((100vw - map-get($grid-breakpoints, 'lg')) / 2 + 0px);
+    }
+
+    a {
+      color: white !important;
+    }
+
+    .menu-close {
+      border: 0 none;
+      color: white;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 8px 49px 8px 15px;
+      background: transparent url("data:image/svg+xml,%3Csvg id='Vertical_Navigation_Dots' data-name='Vertical Navigation Dots' xmlns='http://www.w3.org/2000/svg' width='37' height='37' viewBox='0 0 37 37'%3E%3Ccircle id='Ellipse_28' data-name='Ellipse 28' cx='18.5' cy='18.5' r='18.5' fill='%23204679' opacity='0.291'/%3E%3Cg id='close_24px' transform='translate(7 7)'%3E%3Crect id='Boundary' width='24' height='24' fill='none'/%3E%3Cpath id='_Color' data-name=' ↳Color' d='M14,1.41,12.59,0,7,5.59,1.41,0,0,1.41,5.59,7,0,12.59,1.41,14,7,8.41,12.59,14,14,12.59,8.41,7Z' transform='translate(5 5)' fill='%23fff'/%3E%3C/g%3E%3C/svg%3E%0A") no-repeat right center;
+    }
+
+
+    ul.menu {
+      list-style: none;
+      padding: 0;
+
+      li {
+        a {
+          @include acumin-pro-black;
+          font-size: 2.22em;
+          line-height: calc(1em + 2vh);
+        }
+      }
+    }
+
+  }
+
+  #menu {
+    transition: right .4s ease-in-out, box-shadow .4s ease-in-out;
+  }
+
+  &.menu-open {
+    #wrap { pointer-events: none; }
+    #menu {
+      pointer-events: all !important;
+      right: 0;
+      opacity: 1;
+      box-shadow: 0 0 0 10000vw rgba(0, 0, 0, 0.8);
+    }
+  }
+}

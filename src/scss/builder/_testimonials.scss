@@ -1,0 +1,21 @@
+#builder > section.testimonials {
+
+  .overflow {
+    margin-bottom: 5rem !important;
+    .testimonials {
+      @media ($xl-up) {
+        height: 1px;
+      }
+    }
+  }
+
+  .testimonials {
+    position: relative;
+    .testimonial {
+      background: white;
+      @include drop-shadow;
+      margin-bottom: 1rem;
+      padding: 3rem;
+    }
+  }
+}

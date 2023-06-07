@@ -1,0 +1,8 @@
+section.related_programmes {
+  .item-programme {
+    background: map-get($bg-colors, 'theme3');
+    &:hover {
+      background: $body-text;
+    }
+  }
+}

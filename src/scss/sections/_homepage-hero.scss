@@ -1,0 +1,126 @@
+section.homepage-hero {
+  position: relative;
+  //padding-bottom: 100vh;
+  //margin-bottom: -100vh;
+  //z-index: -1;
+  .mt-1 {
+    @media ($sm-down) {
+      background: rgba(255, 255, 255, 0.85);
+      border-radius: 2rem;
+    }
+    @media ($xs-down) {
+      border-radius: 0;
+    }
+  }
+
+  .fingers {
+    transform: rotate(40deg);
+    margin-top: -4rem;
+    margin-left: 6rem;
+    @media ($md-down) {
+      zoom: 0.7;
+      margin-left: 3rem;
+    }
+    @media ($sm-down) {
+      position: absolute;
+      zoom: 0.7;
+      margin-top: -40rem;
+      margin-left: 3rem;
+      z-index: -1;
+      top: 600px;
+      //opacity: 0.3;
+    }
+
+    > a {
+      display: block;
+      margin-right: -1000vw;
+      position: relative;
+      cursor: initial;
+      transition: opacity .5s ease-out;
+
+      em {
+        display: block;
+        transition: margin-left .5s ease-out, color .5s ease-out;
+        border-radius: 100vh;
+        vertical-align: bottom;
+        padding: 7rem 1rem 1rem 5rem;
+        color: rgba(255, 255, 255, 0);
+        text-transform: uppercase;
+        font-style: normal;
+        @include acumin-pro-ec-semibold;
+        font-size: 2.5em;
+        line-height: 1em;
+        cursor: pointer;
+      }
+
+      &:hover {
+        em {
+          color: rgba(255, 255, 255, 100);
+        }
+      }
+
+      &:nth-child(1) {
+        em {
+          margin-left: 17rem;
+          background-color: #81c8d7;
+        }
+
+        &:hover em {
+          margin-left: 19rem;
+        }
+      }
+
+      &:nth-child(2) {
+        em {
+          margin-left: 8.5rem;
+          background-color: #6db886;
+        }
+
+        &:hover em {
+          margin-left: 10.5rem;
+        }
+      }
+
+      &:nth-child(3) {
+        em {
+          margin-left: 14.5rem;
+          background-color: #ebe452;
+        }
+
+        &:hover em {
+          margin-left: 16.5rem;
+        }
+      }
+
+      &:nth-child(4) {
+        em {
+          margin-left: 0;
+          background-color: #e68853;
+        }
+
+        &:hover em {
+          margin-left: 2rem;
+        }
+      }
+
+      &:nth-child(5) {
+        em {
+          margin-left: 11rem;
+          background-color: #7a2063;
+        }
+
+        &:hover em {
+          margin-left: 13rem;
+        }
+      }
+
+
+    }
+
+    svg {
+      path {
+
+      }
+    }
+  }
+}

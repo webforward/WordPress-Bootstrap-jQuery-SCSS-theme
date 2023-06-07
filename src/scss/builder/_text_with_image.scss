@@ -1,0 +1,8 @@
+#builder > section.text_with_image {
+  .content {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}

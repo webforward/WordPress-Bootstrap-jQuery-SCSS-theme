@@ -1,0 +1,11 @@
+#builder > section.call_to_action {
+  .overflow {
+    margin-bottom: 5rem !important;
+
+  }
+
+  .right_text {
+    @include drop-shadow;
+    padding: 3rem;
+  }
+}

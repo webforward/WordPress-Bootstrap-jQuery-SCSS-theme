@@ -1,3 +1,4 @@
+// Bootstrap
 $container-max-widths: (
         sm: 540px,
         md: 720px,
@@ -15,6 +16,7 @@ $grid-breakpoints: (
         xxl: 1400px
 );
 
+
 $xl-down: "max-width: " + (map-get($grid-breakpoints, 'xxl')-1);
 $lg-down: "max-width: " + (map-get($grid-breakpoints, 'xl')-1);
 $md-down: "max-width: " + (map-get($grid-breakpoints, 'lg')-1);
@@ -28,65 +30,62 @@ $md-up: "min-width: " + map-get($grid-breakpoints, 'md');
 $sm-up: "min-width: " + map-get($grid-breakpoints, 'sm');
 $xs-up: "min-width: " + map-get($grid-breakpoints, 'xs');
 
-$color1: #1A214D;
-$color2: #44ABE3;
-$color3: #23272A;
-$color4: #878BA3;
-$color5: #F6F6F6;
-//$color6: darken($color5, 20%);
-
-$body-text: $color3;
-$body-bg: $color5;
-
-
-// Bootstrap
 $theme-colors: (
-        "primary": $color1,
-        "secondary": $color2,
-        "success": #198754,
-        "info": #0DCAF0,
-        "warning": #FFC107,
-        "danger": #DC3545,
-        "light": #F8F9FA,
-        "dark": #212529
+        "white": #FFFFFF,
+        "color1": #495A69,
+        "color2": #2E4C77,
+        "color3": #6ED0D8,
+        "color4": #E42085,
+        "color5": #F1F8FA,
+        "theme1": #81C8D7,
+        "theme2": #6DB886,
+        "theme3": #EBE452,
+        "theme4": #E68853,
+        "theme5": #7A2063,
+        "theme6": #19848F
+);
+
+$bg-colors: (
+        "theme1": #FCF6F2,
+        "theme2": #FCF6F2,
+        "theme3": #F6F7F1,
+        "theme4": #F5F9F8,
+        "theme5": #F6F7F1,
+        "theme6": #F6F7F1,
 );
 
 $border-radius: 0;
 $border-radius-sm: $border-radius;
 $border-radius-lg: $border-radius;
 
-$btn-border-radius: 0;
+$btn-border-radius: 100vh;
+$btn-border-radius-sm: $btn-border-radius;
+$btn-border-radius-lg: $btn-border-radius;
 
-$spacer: 1.5rem;
-$font-sizes: (
-        1: 2.5rem,
-        2: 2.2rem,
-        3: 1.7rem,
-        4: 1.25rem,
-        5: 1.125rem,
-        6: 1rem
+$input-btn-padding-x: 28px;
+$input-btn-padding-y: 15px;
+
+$spacer: 2rem;
+$spacers: (
+        0: 0,
+        1: $spacer * 1,
+        2: $spacer * 2,
+        3: $spacer * 3,
+        4: $spacer * 4,
+        5: $spacer * 5,
 );
 
+$grid-gutter-width: 3rem;
+
 $link-decoration: none;
-//$headings-font-family: var(--bs-headings-font-family);
-//$headings-font-weight: var(--bs-headings-font-weight);
-//$enable-negative-margins: true;
-//$grid-row-columns: 12;
-//$small-font-size: .825em;
-//$spinner-border-width: .2em;
-//$spinner-border-width-sm: .15em;
+
+$breadcrumb-divider: quote(">");
 
 $table-border-color: lighten(black, 90%);
 $table-group-separator-color: darken($table-border-color, 10%);
 
+// Custom
+$body-text: map-get($theme-colors, 'color1');
+$body-bg: white;
 
-.bg-color1 { background-color: $color1; }
-.bg-color2 { background-color: $color2; }
-.bg-color3 { background-color: $color3; }
-.bg-color4 { background-color: $color4; }
-.bg-color5 { background-color: $color5; }
-.text-color1 { color: $color1; }
-.text-color2 { color: $color2; }
-.text-color3 { color: $color3; }
-.text-color4 { color: $color4; }
-.text-color5 { color: $color5; }
+

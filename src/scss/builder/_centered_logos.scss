@@ -1,0 +1,18 @@
+#builder > section.centered_logos {
+
+  .images {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    .image {
+      margin-bottom: 1rem;
+      aspect-ratio: 2 / 1;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        overflow: hidden;
+      }
+    }
+  }
+}

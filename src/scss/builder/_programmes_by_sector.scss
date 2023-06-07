@@ -1,0 +1,9 @@
+#builder > section.programmes_by_sector {
+  background: map-get($bg-colors, 'theme3');
+  .item-programme {
+    background: white;
+    &:hover {
+      background: $body-text;
+    }
+  }
+}

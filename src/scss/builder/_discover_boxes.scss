@@ -1,0 +1,25 @@
+#builder > section.discover_boxes, body.single-programmes section.discover_boxes {
+
+  .overflow > div {
+    margin-bottom: 28rem;
+    .boxes {
+      margin-bottom: -20rem;
+    }
+  }
+  .box {
+    display: flex;
+    flex-direction: column;
+    background: white;
+    padding: 3rem;
+    border-top-right-radius: 2rem;
+    min-height: 100%;
+    @include drop-shadow;
+    .editable-content {
+      flex-grow: 1;
+    }
+  }
+}
+
+body.single-programmes section.discover_boxes {
+  background: map-get($bg-colors, 'theme3');
+}
