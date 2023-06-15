@@ -1,5 +1,6 @@
 <div class="my-2 my-sm-5">
     <div class="container">
+        <h3 class="mb-1"><?php the_sub_field('title'); ?></h3>
         <?php if (have_rows('team_members')): ?>
             <div class="row">
                 <?php while (have_rows('team_members')): the_row(); ?>
