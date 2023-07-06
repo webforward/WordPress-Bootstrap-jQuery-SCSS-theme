@@ -21,12 +21,12 @@ const CORE_UPGRADE_SKIP_NEW_BUNDLED = true; // Disables installation of twentytw
 /* `Output the bootstrap responsive size in the header
 ----------------------------------------------------------------------------------------------------*/
 
-add_action('wp_head', function () {
-    echo '<div style="position: fixed; z-index:9999; color:red"><div class="d-block d-sm-none">XS</div>
-    <div class="d-none d-sm-block d-md-none">SM</div><div class="d-none d-md-block d-lg-none">MD</div>
-    <div class="d-none d-lg-block d-xl-none">LG</div><div class="d-none d-xl-block d-xxl-none">XL</div>
-    <div class="d-none d-xxl-block">XXL</div></div>';
-});
+//add_action('wp_head', function () {
+//    echo '<div style="position: fixed; z-index:9999; color:red"><div class="d-block d-sm-none">XS</div>
+//    <div class="d-none d-sm-block d-md-none">SM</div><div class="d-none d-md-block d-lg-none">MD</div>
+//    <div class="d-none d-lg-block d-xl-none">LG</div><div class="d-none d-xl-block d-xxl-none">XL</div>
+//    <div class="d-none d-xxl-block">XXL</div></div>';
+//});
 
 
 /* `Theme Settings Support - Buy ACF Pro - It's Amazing!
