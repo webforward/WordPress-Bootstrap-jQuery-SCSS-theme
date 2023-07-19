@@ -39,6 +39,9 @@
                 </div>
                 <div class="col-6 col-md-9">
                     <div class="d-flex justify-content-end ">
+                        <a class="d-none d-md-flex telephone me-lg-1" href="mailto:askus@smarttar.co.uk">
+                            askus@smarttar.co.uk
+                        </a>
                         <a class="d-none d-md-flex telephone me-lg-1" href="tel:01983 475006">
                             <?php require get_template_directory() . '/snippets/telephone.php'; ?>
                             01983 475006
@@ -73,6 +76,7 @@
 
         <div class="contact my-1">
             <p class="m-0"><a class="h3" href="tel:01983 475006">01983 475006</a></p>
+            <p class="m-0"><a class="h3" href="mailto:askus@smarttar.co.uk">askus@smarttar.co.uk</a></p>
         </div>
 
         <?php require get_template_directory() . '/snippets/social-icons.php'; ?>
