@@ -37,8 +37,8 @@
                         <?php require get_template_directory() . '/snippets/logo.php'; ?>
                     </a>
                 </div>
-                <div class="col-6 col-md-9">
-                    <div class="d-flex justify-content-end ">
+                <div class="col-6 col-md-9 align-self-center">
+                    <div class="d-flex justify-content-end">
                         <a class="d-none d-md-flex telephone me-lg-1" href="mailto:askus@smarttar.co.uk">
                             askus@smarttar.co.uk
                         </a>

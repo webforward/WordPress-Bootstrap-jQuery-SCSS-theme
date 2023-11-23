@@ -20,7 +20,7 @@
                         'post_type' => 'testimonials',
                         'posts_per_page' => get_sub_field('posts_per_page'),
                         'orderby' => get_sub_field('order_by'),
-                        'sortby' => 'DESC'
+                        'sortby' => 'DESC',
                     ));
 
                     if ($the_query->have_posts()): ?>
